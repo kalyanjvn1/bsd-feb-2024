@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clock-api
+spec:
+  selector:
+    matchLabels:
+      app: clock-api
+  template:
+    metadata:
+      labels:
+        app: clock-api
+    spec:
+      containers:
+      - name: clock-api
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: <Port>
